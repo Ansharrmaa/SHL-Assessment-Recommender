@@ -17,3 +17,5 @@ services:
         value: llama-3.3-70b-versatile
       - key: MAX_TURNS
         value: "8"
+      - key: PYTHON_VERSION
+        value: 3.12.7
