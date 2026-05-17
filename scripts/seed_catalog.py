@@ -321,7 +321,7 @@ SEED = [
 def main() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     if OUT_FILE.exists():
-        existing = json.loads(OUT_FILE.read_text())
+        existing = json.loads(OUT_FILE.read_text(encoding="utf-8", errors="replace"))
         if len(existing) > len(SEED):
             print(
                 f"catalog.json already has {len(existing)} entries "

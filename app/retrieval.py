@@ -114,7 +114,7 @@ class Retriever:
     """
 
     def __init__(self, catalog_path: Path = CATALOG_FILE):
-        raw = json.loads(Path(catalog_path).read_text())
+        raw = json.loads(Path(catalog_path).read_text(encoding="utf-8", errors="replace"))   
         self.docs: list[Doc] = []
         for i, r in enumerate(raw):
             blob = " ".join(
